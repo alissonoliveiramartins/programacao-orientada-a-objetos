@@ -1,2 +1,3 @@
-raio= float(input())
-print( 3.14159 * raio)
+metros = float(input('Metros :'))
+print('A conversão é: {}',format(metos*100))
+
