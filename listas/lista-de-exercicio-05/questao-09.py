@@ -1,5 +1,6 @@
 def reverso(numero):
-    numero= list()
+    numero= str(numero)
+    numero= list(numero)
     numero.reverse()
-    return (numero)
-print(reverso(123))
+    return (''.join(map(str, numero)))
+
