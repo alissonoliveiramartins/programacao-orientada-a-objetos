@@ -1,0 +1,22 @@
+with open('nomes.txt') as nome:
+  with open('notas.txt') as nota:
+    with open('nome_media.txt', 'w') as saida:
+
+      lista_media= []
+      for linha in nota:
+        soma = 0
+        media = 0
+        linha= linha.replace('\n','')
+        linha=linha.strip()
+        linha=linha.split()
+
+        for somar_notas in linha:
+          soma += int(somar_notas)
+        lista_media.append(soma/len(linha))
+        
+        
+      indice = 0
+      for linha in nome:
+        linha=linha.strip()
+        print('{}, Media : {}'.format(linha,lista_media[indice]),file= saida)
+        indice += 1
