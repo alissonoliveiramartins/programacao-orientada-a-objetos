@@ -3,8 +3,8 @@ with open('usuarios.txt' ) as prova:
 
         def conversao(numero_byts):
             return (int(numero_byts) /1024 / 1024)
-     
-       
+
+        #Listas para armazenamento 
         lista_dados = []
         lista_nomes =[]
         lista_percentual= []
@@ -12,9 +12,9 @@ with open('usuarios.txt' ) as prova:
         soma = 0
         numeracao = 1
        
-        for x in prova:
-            x = x.strip()
-            nomes ,dados = x.split()
+        for linha in prova:
+            linha = linha.strip()
+            nomes ,dados = linha.split()
             lista_dados.append(dados)
             lista_nomes.append(nomes)
             percentual = (int(dados)*100 )
@@ -26,8 +26,7 @@ with open('usuarios.txt' ) as prova:
         
         for indice in range(0,len(lista_nomes)):
             print('{:<3}      {:<10}       {:>8.2f}MB         {:>6.2f} %'.format(indice+1,lista_nomes[indice].center(15),conversao(lista_dados[indice]),int(lista_percentual[indice])/soma), file=saida)        
-        soma = (soma/1024/1024)
+        soma= conversao(soma)
         print(' ', file=saida)
         print('Espaço total ocupado: {:.2f} MB'.format(soma), file=saida)  
         print('Espaço médio ocupado: {:.2f} MB'.format(soma/len(lista_nomes)), file=saida)
- 
