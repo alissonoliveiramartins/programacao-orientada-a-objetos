@@ -34,3 +34,7 @@ text = "John saw the book on the table"
 #Palavras com as Tag
 analisada = nltk.pos_tag(nltk.word_tokenize(text))
 print(analisada,'\n')
+
+stemmer = nltk.stem.RSLPStemmer()
+print(stemmer.stem('Paisagem'))
+print(stemmer.stem('Chuvoso'))
